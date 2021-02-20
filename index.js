@@ -14,7 +14,7 @@ module.exports = class XKCD extends Plugin {
             executor: (args) => {
                 let number=args[0]          
                 if(isNaN(parseInt(args[0]))){
-                    number = AliasHandler.getAlias(args[0])
+                    number = AliasHandler.getAlias(args[0].toLowerCase())
                     if(number === null){
                         return {
                             send: false,
@@ -44,19 +44,19 @@ module.exports = class XKCD extends Plugin {
                         AliasHandler.setAlias(args[1],args[2])
                         return {
                             send: false,
-                            result: 'Alias **'+args[1]+' <- '+args[2]+'** added'
+                            result: 'Alias **'+args[1]+' <- '+args[2].toLowerCase()+'** added'
                         }
                         break
                     case 'del':
-                        let alias = AliasHandler.getAlias(args[1])
+                        let alias = AliasHandler.getAlias(args[1].toLowerCase())
                         if(alias===null)return {
                             send: false,
                             result: '```\nNot an alias.\n```'
                         }
-                        AliasHandler.deleteAlias(args[1])
+                        AliasHandler.deleteAlias(args[1].toLowerCase())
                         return {
                             send: false,
-                            result: 'Alias **'+args[1]+'** deleted'
+                            result: 'Alias **'+args[1].toLowerCase()+'** deleted'
                         }
                         break
                     case 'list':
