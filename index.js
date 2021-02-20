@@ -21,7 +21,6 @@ module.exports = class XKCD extends Plugin {
                             result: "Please insert a number or a valid alias"
                         }
                     }
-                    number=number.toString()
                 }     
                 return {
                     send: true,
