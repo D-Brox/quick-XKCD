@@ -101,5 +101,6 @@ module.exports = class XKCD extends Plugin {
     
     pluginWillUnload () {
         powercord.api.commands.unregisterCommand('XKCD')
+        powercord.api.commands.unregisterCommand('XKCD.manage')
     }
 }
