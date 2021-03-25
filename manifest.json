@@ -1,7 +1,7 @@
 {
     "name": "Quick XKCD",
     "description": "Allows you send XKCD links and save them with aliases.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "D Brox",
     "license": "MIT"
 }
